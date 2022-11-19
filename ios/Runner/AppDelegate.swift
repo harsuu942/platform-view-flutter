@@ -4,7 +4,6 @@ import Flutter
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
     
-    var myOrientation: UIInterfaceOrientationMask = .portrait
     
 
   override func application(
@@ -12,10 +11,9 @@ import Flutter
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     
-    
-            GeneratedPluginRegistrant.register(with: self)
 
-      weak var registrar = self.registrar(forPlugin: "ima_sdk")
+
+      weak var registrar = self.registrar(forPlugin: "")
 
       let factory = NativeViewFactory(messenger: registrar!.messenger())
       registrar!.register(
@@ -25,8 +23,5 @@ import Flutter
 return super.application(application, didFinishLaunchingWithOptions: launchOptions)
       
   }
-    override func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-            return myOrientation
-        }
-    
+
 }
